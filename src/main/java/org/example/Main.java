@@ -17,9 +17,11 @@ public class Main {
                     try {
                         System.out.println("please enter number #" + counter);
                         int num = Integer.parseInt(scanner.nextLine());
-                        if (num > 0) {
+                        if (num >= 0) {
                             summ += num;
                             counter++;
+                        } else{
+                            System.out.println("negative values not allowed!!! Try again.");
                         }
                     } catch (NumberFormatException badUserData) {
                         System.out.println("Characters not allowed!!! Try again.");
