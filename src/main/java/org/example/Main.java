@@ -12,7 +12,6 @@ public class Main {
 
             int summ = 0;
             Scanner scanner = new Scanner(System.in);
-            boolean validNum = false;
             int counter = 1;
             while (counter < 6) {
                     try {
@@ -27,9 +26,7 @@ public class Main {
                     }
             }
 
-
-
-        return "so summ of your numbers is " + summ;
+        return "so sum of your numbers is " + summ;
     }
     }
 
