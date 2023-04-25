@@ -4,32 +4,34 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println(getInputFromScanner());
+  public static void main(String[] args) {
+    System.out.println(getInputFromScanner());
+  }
+
+  public static String getInputFromScanner() {
+
+    int summ = 0;
+    Scanner scanner = new Scanner(System.in);
+    for (int counter = 1; counter < 6; counter++) {
+      try {
+        System.out.println("please enter number #" + counter);
+        int num = Integer.parseInt(scanner.nextLine());
+        if (num >= 0) {
+          summ += num;
+        } else {
+          throw new IllegalArgumentException("negative values not allowed!!! Try again");
+          //System.out.println("negative values not allowed!!! Try again.");
+        }
+      } catch (Exception badUserData) {
+        // badUserData.printStackTrace();
+        System.out.println("positive number required!!! Try again.");
+        System.out.println(badUserData.getMessage());
+        counter--;
+      }
     }
 
-        public static String getInputFromScanner(){
-
-            int summ = 0;
-            Scanner scanner = new Scanner(System.in);
-            int counter = 1;
-            while (counter < 6) {
-                    try {
-                        System.out.println("please enter number #" + counter);
-                        int num = Integer.parseInt(scanner.nextLine());
-                        if (num >= 0) {
-                            summ += num;
-                            counter++;
-                        } else{
-                            System.out.println("negative values not allowed!!! Try again.");
-                        }
-                    } catch (NumberFormatException badUserData) {
-                        System.out.println("Characters not allowed!!! Try again.");
-                    }
-            }
-
-        return "so sum of your numbers is " + summ;
-    }
-    }
+    return "so sum of your numbers is " + summ;
+  }
+}
 
 
